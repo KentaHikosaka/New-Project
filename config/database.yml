@@ -10,6 +10,7 @@ default: &default
   timeout: 5000
 
 development:
+  <<: *default
   adapter: postgresql
   host: localhost
   encoding: utf8
@@ -18,10 +19,8 @@ development:
   password: kenta
   pool: 5
   timeout: 5000
-  <<: *default
   # database: db/development.sqlite3
   database: new_project_development
-
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -32,13 +31,11 @@ test:
 #
 production:
   <<: *default
-adapter: postgresql
+  adapter: postgresql
   encoding: unicode
   pool: 5
   username: quixtdnvhnckpv
-  password: 0c12265
-c8c465b4125d2b5e5ff43b3d72b16a3888644d6cfc39e32611bf28de1
-  hostname: e
-c2-54-83-29-34.compute-1.amazonaws.com
-  post: 5432
+  password: 0c12265c8c465b4125d2b5e5ff43b3d72b16a3888644d6cfc39e32611bf28de1
+  hostname: ec2-54-83-29-34.compute-1.amazonaws.com
+  port: 5432
   database: d1crdslfdvvnk2
